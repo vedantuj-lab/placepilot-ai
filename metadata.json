@@ -1,0 +1,6 @@
+{
+  "name": "PlacePilot AI — Scheme Saathi",
+  "description": "Agentic welfare benefits and scholarship readiness engine for Indian citizens. Rules decide, AI assists, humans approve.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,1173 @@
+# MASTER BUILD PROMPT — PLACEPILOT AI
+## AgentX Hackathon | PS-01: Scheme Saathi
+
+You are a senior full-stack developer, AI agent architect, UI/UX designer, database engineer and security specialist.
+
+Your task is to DESIGN AND BUILD a complete, professional, responsive and functional web application named **PlacePilot AI**.
+
+Do not create only a landing page, dashboard mockup or static prototype. Build a working application with functional navigation, authentication, database integration, AI tool calling, scheme discovery, eligibility checking, document preparation, application form prefill, human approval and application tracking.
+
+Follow every requirement below.
+
+---
+
+# 1. PROJECT IDENTITY
+
+**Product:** PlacePilot AI
+
+**Problem Statement:** AgentX — PS-01: Scheme Saathi
+
+**Team:** Tech Dynamites
+
+**Institution:** Shree L.R. Tiwari College of Engineering
+
+**Tagline:** Your welfare benefits journey, finally connected.
+
+### Product vision
+
+PlacePilot AI is an agentic government welfare scheme assistant that helps citizens discover government schemes and scholarships, understand their eligibility, prepare required documents, prefill applications, review them and follow their application progress.
+
+It should support citizens who have difficulty understanding government portals, eligibility requirements, documentation and application procedures.
+
+### Core principle
+
+RULES DECIDE. AI ASSISTS. HUMANS APPROVE.
+
+- A deterministic eligibility engine decides eligibility based on published rules.
+- Gemini AI understands citizen requests, plans actions, selects tools and explains results.
+- Citizens retain control over their documents and applications.
+- No consequential application submission happens without explicit human approval.
+- Never fabricate official application statuses, scheme information or government submission confirmations.
+
+---
+
+# 2. MOST IMPORTANT FEATURE — SCHEME READINESS ENGINE
+
+This is the hero feature of the entire application.
+
+Build this workflow before spending time on secondary features.
+
+The complete flow:
+
+1. Citizen enters a request using text or voice.
+2. AI understands the citizen's language and intent.
+3. AI collects missing profile information.
+4. AI searches relevant government schemes and scholarships.
+5. AI retrieves scheme details and official government sources.
+6. Eligibility engine evaluates the citizen against published eligibility rules.
+7. AI explains why the citizen qualifies, does not qualify or needs additional verification.
+8. System generates a personalized document checklist.
+9. Citizen uploads required documents with consent.
+10. AI extracts relevant document information where supported.
+11. System prefills the application form.
+12. Validation checks missing fields and inconsistent information.
+13. Citizen reviews the completed application.
+14. System asks for explicit human approval.
+15. Citizen can open the verified official application website or use an authorized submission integration if one genuinely exists.
+16. System tracks application progress where supported.
+17. Agent creates reminders and follow-up tasks.
+
+The complete workflow must be demonstrable from beginning to end.
+
+---
+
+# 3. GOVERNMENT SCHEME EXPLORER — NATIONWIDE COVERAGE
+
+Create a comprehensive Government Scheme Explorer.
+
+The application should support Central Government schemes, State Government schemes, Union Territory schemes and scholarships.
+
+### Official discovery sources
+
+Use these government portals as primary discovery and reference sources:
+
+1. myScheme:
+https://www.myscheme.gov.in/
+
+2. National Scholarship Portal:
+https://scholarships.gov.in/
+
+3. MahaDBT:
+https://mahadbt.maharashtra.gov.in/
+
+4. MahaDBT 2.0:
+https://mahadbt2.maharashtra.gov.in/
+
+5. UMANG:
+https://www.umang.gov.in/landing/
+
+6. National Portal of India:
+https://www.india.gov.in/
+
+Important implementation rules:
+
+- Use authorized APIs, official feeds or permitted datasets where available.
+- If an official API is unavailable, maintain verified and curated scheme records.
+- Do not assume these portals provide unrestricted APIs.
+- Do not fabricate live integration or scrape websites in violation of their terms.
+- Store official URLs and source verification dates.
+- Show when information was last verified.
+- Keep the scheme catalogue expandable to every Indian state and UT.
+- Start with Maharashtra and Central Government schemes for the working hackathon dataset, then support expansion nationwide.
+- Clearly distinguish live source retrieval from locally stored catalogue data.
+
+### Scheme categories
+
+Create categories for:
+
+- Education and Scholarships
+- Agriculture and Farmers
+- Healthcare and Medical Assistance
+- Housing
+- Women and Child Welfare
+- Employment and Skill Development
+- Entrepreneurship and Business
+- Senior Citizens
+- Disability and Accessibility
+- Financial Inclusion
+- Social Welfare
+- Rural Development
+- Food and Nutrition
+- Other Government Benefits
+
+### Explorer filters
+
+Provide:
+
+- Search by scheme name.
+- Search by keyword.
+- Search by beneficiary.
+- Central Government.
+- State Government.
+- State and UT selection.
+- Category.
+- Education level.
+- Income range.
+- Gender, only where relevant to the scheme rules.
+- Application status.
+- Currently accepting applications, only when verified.
+- Academic year.
+- Scholarship filter.
+
+Allow browsing without login. Require authentication for saving schemes, personalized eligibility assessments and document/application management.
+
+### Scheme cards
+
+Every scheme card must show:
+
+- Scheme name.
+- Department.
+- Government level.
+- State or Central classification.
+- Category.
+- Short description.
+- Benefits.
+- Eligibility summary.
+- Application deadline, only if verified.
+- Source verification status.
+- Last verified date.
+
+Buttons:
+
+- View Details
+- Check My Eligibility
+- View Required Documents
+- Save Scheme
+- Open Official Website
+
+### Scheme details page
+
+Show:
+
+1. Scheme overview.
+2. Benefits.
+3. Eligibility conditions.
+4. Required documents.
+5. Application process.
+6. Important dates.
+7. Responsible department.
+8. Official guidelines.
+9. Official scheme information URL.
+10. Official application URL.
+11. Last verification date.
+12. Source verification status.
+
+### Official website redirection
+
+This feature is mandatory.
+
+When a citizen selects a scheme:
+
+- Show the official government portal associated with it.
+- Provide an Open Official Website button.
+- If a verified application URL exists, label it Apply on Official Portal.
+- If only the scheme information URL exists, label it View Official Scheme Details.
+- If the scheme uses a common application portal, show the correct verified portal.
+- If no verified URL exists, show that the official link is currently unavailable.
+- Never invent application links.
+- Never label an unofficial website as an official government website.
+- Open verified external links in a new browser tab using safe external-link attributes.
+- Display a confirmation before redirecting.
+
+The portal should remain accessible even if the citizen does not want to use the AI assistant.
+
+---
+
+# 4. SCHOLARSHIP DISCOVERY SYSTEM
+
+Build a dedicated scholarship section.
+
+Support:
+
+- Central scholarships.
+- State scholarships.
+- Merit-based scholarships.
+- Need-based scholarships.
+- Post-matric scholarships.
+- Pre-matric scholarships.
+- Minority scholarships.
+- Technical and professional education scholarships.
+- Disability scholarships.
+- Girls' education scholarships.
+- Other verified education assistance schemes.
+
+Collect relevant information:
+
+- Current education level.
+- Course.
+- Institution.
+- State.
+- Category, only where relevant and voluntarily provided.
+- Annual family income.
+- Academic year.
+- Previous academic performance, when required by a scheme.
+
+Show:
+
+- Scholarship name.
+- Eligibility.
+- Benefits.
+- Income criteria.
+- Academic requirements.
+- Required documents.
+- Deadline.
+- Official application portal.
+- Academic year.
+- Verification status.
+
+Do not hardcode old academic-year deadlines.
+
+Make scholarship information configurable by academic year and update it only from reliable sources.
+
+---
+
+# 5. CITIZEN AUTHENTICATION AND PROFILE
+
+Build a complete authentication system.
+
+### Login options
+
+- Email and password.
+- Sign up.
+- Forgot password.
+- Logout.
+- Protected pages.
+- Session persistence.
+
+Use Supabase Authentication.
+
+### Citizen profile
+
+Collect only the information required for useful scheme matching:
+
+- Full name.
+- Age or date of birth.
+- State.
+- District.
+- PIN code.
+- Education level.
+- Occupation.
+- Annual family income.
+- Relevant household information.
+- Other eligibility attributes required by selected schemes.
+
+Sensitive information must be optional unless a specific scheme requires it.
+
+Do not request OTPs, passwords or bank-login credentials.
+
+### Profile management
+
+- Edit profile.
+- Save profile.
+- View profile completeness.
+- Manage language.
+- Manage consent.
+- Delete account and associated personal data through an appropriate deletion workflow.
+
+---
+
+# 6. ELIGIBILITY RULES ENGINE
+
+Build a deterministic rules engine in the backend.
+
+Do not allow Gemini to independently decide eligibility.
+
+Each scheme must have structured eligibility rules.
+
+Example:
+
+{
+  "scheme_id": "SCHOLARSHIP_001",
+  "conditions": [
+    {
+      "field": "state",
+      "operator": "equals",
+      "value": "Maharashtra"
+    },
+    {
+      "field": "annual_income",
+      "operator": "less_than_or_equal",
+      "value": 250000
+    },
+    {
+      "field": "education_level",
+      "operator": "in",
+      "value": ["Undergraduate", "Postgraduate"]
+    }
+  ]
+}
+
+This is sample rule data only. Actual rules must be based on the relevant published scheme guidelines.
+
+### Eligibility results
+
+Provide four possible outcomes:
+
+1. Eligible.
+2. Not Eligible.
+3. Additional Information Required.
+4. Needs Official Verification.
+
+### Eligibility explanation
+
+For every condition, show:
+
+- Requirement.
+- Citizen's information.
+- Comparison.
+- Result.
+- Source or guideline reference.
+
+Allow the citizen to correct profile information and run the assessment again.
+
+Do not invent thresholds or assume that missing information means eligibility.
+
+---
+
+# 7. DOCUMENT READINESS STUDIO
+
+Create a document management workspace.
+
+### Document functionality
+
+- Upload PDF.
+- Upload JPG.
+- Upload PNG.
+- View uploaded documents.
+- Rename documents.
+- Delete documents.
+- Associate documents with a scheme.
+- View document verification status.
+
+### Document checklist
+
+Generate the checklist from the selected scheme's published requirements.
+
+Example:
+
+- Identity proof.
+- Residence proof.
+- Income certificate.
+- Educational certificate.
+- Previous marksheet.
+- Bank account proof, only if required.
+- Caste certificate, only if required.
+- Disability certificate, only if required.
+
+These are examples, not universal requirements.
+
+### Document statuses
+
+- Missing.
+- Uploaded.
+- Processing.
+- Extracted.
+- Needs Review.
+- Verified by Citizen.
+- Officially Verified, only when supported by an authorized verification source.
+
+Allow users to review and correct extracted information before using it.
+
+### Security
+
+- Use private Supabase Storage buckets.
+- Apply per-user access controls.
+- Validate file type and size.
+- Use short-lived signed URLs.
+- Do not publicly expose uploaded documents.
+- Ask for consent before processing documents.
+
+---
+
+# 8. APPLICATION FORM STUDIO
+
+Create a working application preparation workspace.
+
+### Functionality
+
+- Load scheme-specific form templates.
+- Display application fields.
+- Map available citizen profile information to form fields.
+- Prefill matching fields.
+- Allow editing.
+- Mark required and optional fields.
+- Validate field formats.
+- Show missing information.
+- Save draft.
+- Reopen draft.
+- Preview final application.
+
+### Important
+
+Never claim that every government application can be submitted directly from PlacePilot.
+
+If an official submission integration is unavailable:
+
+- Prepare the application draft.
+- Show the citizen the required official portal.
+- Provide a secure handoff.
+- Let the citizen complete the actual submission on the government portal.
+
+Do not fabricate government application reference numbers.
+
+---
+
+# 9. HUMAN APPROVAL CENTER
+
+This is a mandatory safety feature.
+
+Before any consequential submission:
+
+1. Display the application summary.
+2. Display the selected scheme.
+3. Display the citizen's entered information.
+4. Display the document checklist.
+5. Show validation results.
+6. Ask the citizen to confirm.
+7. Record the approval event.
+8. Only then allow the authorized submission action.
+
+If there is no genuine official integration, approval should authorize the external handoff or draft-finalization action, not falsely simulate a government submission.
+
+Backend must enforce the approval requirement. Hiding a button in the frontend is not sufficient.
+
+Keep an audit trail of all important actions.
+
+---
+
+# 10. APPLICATION TRACKER
+
+Build an application tracking dashboard.
+
+Application statuses:
+
+- Saved.
+- Eligibility Checking.
+- Documents Pending.
+- Draft In Progress.
+- Ready for Review.
+- Awaiting Approval.
+- Ready for Official Portal.
+- Submitted.
+- Under Review.
+- Approved.
+- Rejected.
+- Additional Information Required.
+
+Important:
+
+Only mark an application Submitted, Approved or Rejected when the status is supported by a real authorized source or verified citizen-provided evidence.
+
+Show whether a status is:
+
+- Citizen-entered.
+- PlacePilot-generated.
+- Officially verified.
+- Simulated demo data.
+
+### Tracking functionality
+
+- View applications.
+- Open application details.
+- View status history.
+- Add notes.
+- Update supported statuses.
+- Create reminders.
+- View important dates.
+
+---
+
+# 11. FOLLOW-UP AND REMINDER PLANNER
+
+Build a functional reminder system.
+
+Features:
+
+- Create reminders.
+- Set date and time.
+- Add description.
+- Associate reminders with applications.
+- Mark complete.
+- Edit reminders.
+- Delete reminders.
+- Show upcoming tasks.
+- Show overdue tasks.
+
+Examples:
+
+- Upload missing income certificate.
+- Review application.
+- Visit official portal.
+- Check scholarship status.
+- Complete additional document requirements.
+
+Use actual persisted reminder records.
+
+---
+
+# 12. AI WELFARE ASSISTANT
+
+Use Gemini API through the backend.
+
+Do not expose Gemini API keys in frontend code.
+
+### Supported languages
+
+- English.
+- Hindi.
+- Marathi.
+
+Design the assistant so that more Indian languages can be added later.
+
+### Interface
+
+Create a conversational interface with:
+
+- Text input.
+- Send button.
+- Voice input.
+- Text-to-speech.
+- Conversation history.
+- Clear conversation option.
+- Suggested questions.
+- Loading indicators.
+- Error handling.
+
+### Example questions
+
+- "Mujhe Maharashtra mein scholarship chahiye."
+- "मुझे कौन-कौन सी सरकारी योजनाओं का लाभ मिल सकता है?"
+- "I am a college student. Find scholarships for me."
+- "मुझे इस योजना के लिए कौन से documents चाहिए?"
+- "Check my eligibility."
+- "Show my pending applications."
+
+### Gemini tool calling
+
+Implement actual backend tools:
+
+1. get_citizen_profile
+2. update_citizen_profile
+3. search_all_government_schemes
+4. search_central_schemes
+5. search_state_schemes
+6. search_scholarships
+7. get_scheme_details
+8. get_scheme_official_sources
+9. get_official_application_url
+10. get_scheme_guidelines
+11. verify_scheme_source
+12. get_eligibility_rules
+13. check_eligibility
+14. get_required_documents
+15. update_document_checklist
+16. extract_document_data
+17. get_application_form
+18. prefill_application_form
+19. validate_application_form
+20. request_submission_approval
+21. submit_application
+22. track_application
+23. create_followup_reminder
+24. get_agent_memory
+25. save_agent_memory
+
+Tool execution requirements:
+
+- Every tool must map to a real backend function.
+- Validate inputs and permissions.
+- Log tool execution.
+- Handle errors.
+- Return structured results.
+- Ask the citizen for missing information.
+- Do not pretend a tool executed if it did not.
+- Do not allow Gemini to bypass eligibility rules or human approval.
+
+---
+
+# 13. AGENT ARCHITECTURE
+
+Implement one central agent called:
+
+SCHEME SAATHI ORCHESTRATOR
+
+Do not create unnecessary multiple agents.
+
+Its responsibilities:
+
+1. Understand the citizen's request.
+2. Identify the task.
+3. Plan the required actions.
+4. Select the relevant backend tools.
+5. Execute tool calls.
+6. Inspect the results.
+7. Ask for missing information.
+8. Explain the outcome.
+9. Prepare drafts.
+10. Request approval.
+11. Execute authorized actions.
+12. Save relevant user-approved memory.
+13. Maintain an audit trail.
+
+Use structured outputs and controlled tool execution.
+
+The agent should never claim to have searched every government database unless the actual data sources support that claim.
+
+---
+
+# 14. ADMIN WORKSPACE
+
+Create a separate Admin Dashboard.
+
+Admin features:
+
+### Scheme management
+
+- Add scheme.
+- Edit scheme.
+- Archive scheme.
+- Manage category.
+- Manage department.
+- Set government level.
+- Set state.
+- Manage academic year.
+
+### Source management
+
+- Add official source.
+- Add official application URL.
+- Add guidelines URL.
+- Verify source.
+- Mark source broken.
+- Record verification date.
+- View source history.
+
+### Eligibility rules management
+
+- Add eligibility conditions.
+- Edit conditions.
+- Test conditions.
+- Publish or archive rules.
+
+### Admin analytics
+
+- Total schemes.
+- Verified schemes.
+- Pending verification.
+- Broken links.
+- Applications prepared.
+- Eligibility assessments.
+
+### Security
+
+- Only authorized admin accounts can access this workspace.
+- Admin permissions must be enforced on the backend.
+- Log sensitive admin actions.
+
+---
+
+# 15. UI/UX DESIGN SYSTEM
+
+Build a premium, modern, professional government-tech SaaS platform.
+
+Do not make the design look like a generic AI-generated template.
+
+### Visual direction
+
+Use an elegant combination of:
+
+- Deep charcoal.
+- Warm cream.
+- Emerald green.
+- Teal.
+- Muted orange.
+- Violet accents.
+- Soft gradients.
+- Subtle glass effects.
+- Professional typography.
+
+Avoid using blue as the dominant color throughout the entire website.
+
+Use different color combinations for different sections while maintaining a consistent design system.
+
+### Landing page
+
+Create:
+
+1. Premium navigation bar.
+2. Hero section.
+3. Tagline.
+4. Main CTA: Find Government Schemes.
+5. Secondary CTA: Talk to Scheme Saathi.
+6. Interactive product preview.
+7. How It Works.
+8. Government scheme categories.
+9. Scholarship discovery preview.
+10. Trust and transparency section.
+11. Features.
+12. FAQ.
+13. Footer.
+
+### Dashboard
+
+Display:
+
+- Welcome section.
+- Profile completion.
+- Relevant schemes.
+- Eligibility summary.
+- Pending documents.
+- Active applications.
+- Upcoming reminders.
+- Recent activities.
+- Quick actions.
+
+### Main navigation
+
+- Dashboard.
+- Scheme Explorer.
+- Scholarships.
+- Eligibility.
+- Documents.
+- Applications.
+- AI Assistant.
+- Reminders.
+- Profile.
+- Settings.
+
+### UX requirements
+
+- Fully responsive.
+- Desktop, tablet and mobile support.
+- Consistent icons.
+- Accessible contrast.
+- Smooth transitions.
+- Meaningful hover states.
+- Skeleton loaders.
+- Empty states.
+- Error states.
+- Confirmation dialogs.
+- Toast notifications.
+- Search suggestions.
+- Pagination or efficient loading.
+- Keyboard accessibility.
+
+Every visible button must perform its intended action.
+
+Do not use fake buttons, dead links or non-functional navigation.
+
+---
+
+# 16. TECHNOLOGY STACK
+
+Use the following architecture.
+
+### Frontend
+
+- React.
+- Vite.
+- TypeScript preferred.
+- Tailwind CSS.
+- Lucide React icons.
+- Reusable components.
+- Responsive layouts.
+
+### Backend
+
+- Node.js.
+- Express.js.
+- REST APIs.
+- Server-side Gemini integration.
+- Deterministic eligibility engine.
+- Input validation.
+- Authorization middleware.
+
+### Database and storage
+
+- Supabase PostgreSQL.
+- Supabase Authentication.
+- Supabase Storage.
+- Row Level Security.
+
+### AI
+
+- Gemini API.
+- Function calling.
+- Structured JSON outputs.
+- Hindi, Marathi and English language handling.
+
+### Deployment
+
+- Frontend: Vercel.
+- Backend: Node-compatible hosting provider.
+- Database: Supabase.
+- Repository: GitHub.
+
+Use environment variables for all secrets.
+
+Do not hardcode credentials.
+
+---
+
+# 17. DATABASE DESIGN
+
+Create proper SQL migrations and database schema.
+
+Required tables:
+
+1. profiles
+2. schemes
+3. scheme_sources
+4. scheme_categories
+5. eligibility_rules
+6. eligibility_results
+7. saved_schemes
+8. scheme_documents
+9. documents
+10. document_checklists
+11. applications
+12. application_forms
+13. application_form_fields
+14. application_events
+15. reminders
+16. plan_tasks
+17. memory_items
+18. approvals
+19. action_logs
+20. agent_sessions
+21. agent_tool_logs
+22. admin_audit_logs
+
+Requirements:
+
+- Correct foreign keys.
+- Appropriate indexes.
+- Created and updated timestamps.
+- User ownership.
+- Role-based authorization.
+- RLS policies.
+- Secure document references.
+- Proper cascading and deletion behavior.
+
+Never expose private user records to other citizens.
+
+---
+
+# 18. DEMO DATA AND DEMO ACCOUNTS
+
+Create realistic seed data.
+
+Include:
+
+- At least 20 sample scheme records.
+- Central Government schemes.
+- Maharashtra Government schemes.
+- Scholarships.
+- Multiple categories.
+- Verified, pending and broken source examples.
+- Sample eligibility rules.
+- Required document records.
+- Application form templates.
+- Sample reminders.
+- Sample application histories.
+
+Important:
+
+Do not label invented scheme records or URLs as real government information.
+
+Use genuine scheme names and verified official links when populating real records. If a record is fictional, label it DEMO DATA.
+
+### Demo accounts
+
+Create a documented development/demo authentication setup:
+
+Citizen:
+citizen.demo@placepilot.local
+
+Admin:
+admin.demo@placepilot.local
+
+Use a development-only seed script or Supabase-supported setup. Do not pretend these accounts are automatically available in a live hosted environment.
+
+Document how to configure their passwords securely.
+
+Provide demo citizen profile data sufficient to demonstrate eligibility checking.
+
+---
+
+# 19. SECURITY AND PRIVACY
+
+Implement:
+
+- Supabase RLS.
+- Server-side API keys.
+- Private storage.
+- Authentication and authorization.
+- Input validation.
+- Upload validation.
+- Consent management.
+- Audit logs.
+- Secure external redirects.
+- Rate limiting for sensitive endpoints.
+- Safe error responses.
+- Protection against unauthorized submissions.
+
+Do not collect unnecessary Aadhaar, banking or other sensitive personal information.
+
+Never ask for:
+
+- OTPs.
+- Account passwords.
+- Internet banking credentials.
+
+Do not claim legal or regulatory compliance simply because security features have been implemented.
+
+---
+
+# 20. TESTING REQUIREMENTS
+
+Write tests for:
+
+- Registration and login.
+- Profile management.
+- Scheme search.
+- Official URL handling.
+- Eligibility engine.
+- Missing profile information.
+- Document checklist.
+- Document upload permissions.
+- Form prefill.
+- Form validation.
+- Human approval.
+- Unauthorized submission prevention.
+- Application tracking.
+- Reminder creation.
+- Admin authorization.
+- RLS isolation.
+- Gemini tool execution.
+- API failures.
+
+Create an end-to-end test for the entire Scheme Readiness Engine.
+
+---
+
+# 21. README AND PROJECT DOCUMENTATION
+
+Create a complete README.md containing:
+
+1. Project overview.
+2. Problem statement.
+3. Solution.
+4. Main features.
+5. System architecture.
+6. Agent architecture.
+7. Technology stack.
+8. Database design.
+9. Environment variables.
+10. Installation.
+11. Local development.
+12. Supabase configuration.
+13. Gemini configuration.
+14. Seed data setup.
+15. Demo account setup.
+16. API documentation.
+17. Testing instructions.
+18. Deployment.
+19. Security.
+20. Known limitations.
+
+Also create:
+
+- .env.example
+- SQL migration files.
+- Seed scripts.
+- API documentation.
+- Architecture documentation.
+- Demo script.
+- Testing documentation.
+
+---
+
+# 22. DEVELOPMENT AND EXECUTION RULES
+
+Follow these instructions strictly.
+
+1. First inspect the current project structure.
+2. If the repository already contains useful files, preserve and improve them.
+3. Do not unnecessarily delete existing working code.
+4. Build the application incrementally.
+5. Create reusable frontend components.
+6. Implement the backend API.
+7. Connect Supabase.
+8. Implement Gemini tool calling.
+9. Implement the eligibility engine.
+10. Connect all frontend buttons to real functionality.
+11. Add realistic seed data.
+12. Test the complete user journey.
+13. Fix build errors.
+14. Fix console errors.
+15. Fix API errors.
+16. Make the application responsive.
+17. Verify that all pages load correctly.
+18. Ensure that no secrets are committed to GitHub.
+
+If an external service is not configured, provide a clearly labelled development mode with realistic mock data.
+
+Never silently substitute a mock integration for a real integration.
+
+Add a visible DEMO MODE indicator when simulated data or actions are being used.
+
+Do not generate fake success messages.
+
+---
+
+# 23. IMPLEMENTATION PRIORITY
+
+Build in this order.
+
+### Phase 1 — Core application
+
+- Project structure.
+- Landing page.
+- Authentication.
+- Citizen profile.
+- Dashboard.
+
+### Phase 2 — Government scheme discovery
+
+- Scheme Explorer.
+- Government source records.
+- Official links.
+- Scholarship discovery.
+- Scheme details.
+
+### Phase 3 — Core agent intelligence
+
+- Gemini integration.
+- Scheme Saathi Orchestrator.
+- Backend tool calling.
+- Eligibility rules engine.
+- Eligibility explanation.
+
+### Phase 4 — Application readiness
+
+- Document Studio.
+- Document checklist.
+- Application Form Studio.
+- Form validation.
+- Draft storage.
+
+### Phase 5 — Human-controlled actions
+
+- Approval Center.
+- Official portal handoff.
+- Authorized submission integration, if available.
+- Application Tracker.
+- Follow-up reminders.
+
+### Phase 6 — Administration and quality
+
+- Admin workspace.
+- Source verification.
+- Hindi and Marathi interaction.
+- Security.
+- Testing.
+- Documentation.
+- Deployment.
+
+Do not skip Phase 2 or Phase 3 to spend time on decorative animations.
+
+---
+
+# 24. FINAL ACCEPTANCE CRITERIA
+
+The project is not complete until the following core workflow works:
+
+A citizen opens PlacePilot AI.
+
+They sign in.
+
+They enter:
+
+"I am a college student from Maharashtra. My family's annual income is approximately ₹1,50,000. Find scholarships that I may qualify for."
+
+The agent:
+
+1. Understands the request.
+2. Checks the citizen profile.
+3. Asks for missing details.
+4. Searches the available scheme catalogue.
+5. Displays relevant scholarships.
+6. Shows official source links.
+7. Checks published eligibility rules.
+8. Explains the results.
+9. Creates the document checklist.
+10. Allows document upload.
+11. Prepares the application draft.
+12. Validates the form.
+13. Shows the completed draft.
+14. Requests citizen approval.
+15. Opens the verified official application portal.
+16. Clearly distinguishes an external application from an actual integrated submission.
+17. Allows follow-up reminders.
+18. Displays application progress where real status information is available.
+
+The application must also work with Hindi and Marathi requests.
+
+### Final quality requirement
+
+Build PlacePilot AI as a realistic, polished, trustworthy and functional government-tech product.
+
+The central feature must be the Scheme Readiness Engine.
+
+The result must demonstrate actual agentic behavior:
+
+UNDERSTAND → PLAN → SEARCH → VERIFY → CHECK → PREPARE → VALIDATE → ASK APPROVAL → HAND OFF → TRACK.
+
+Do not deliver only a UI mockup.
+
+Do not claim integrations that do not exist.
+
+Do not fabricate official scheme information, URLs, eligibility results or submission confirmations.
+
+Start by creating the project architecture and then implement the complete application phase by phase.
